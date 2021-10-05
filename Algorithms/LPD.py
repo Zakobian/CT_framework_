@@ -39,7 +39,7 @@ class blue_box(nn.Module):
         )
 
     def forward(self, h, f, g):
-        delf = config.fwd_op_mod(f[:,0:1])
+        delf = config.fwd_op_mod(f[:,1:2])
         output = self.conv(torch.cat([h,delf,g],dim=1))
         output = h + output
         return output
